@@ -1,6 +1,5 @@
 import axios from 'axios'
 const url = `http://localhost:4000`
-
 class aGetModel {
   static all = () => {
     let req = axios.get(`${url}/gets`)

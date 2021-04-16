@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import GiveModel from '../models/GiveModel'
 import GiveCard from '../cards/GiveCard'
-
+import EditGive from '../forms/EditGive'
 class GiveShow extends Component {
     state = {
         giveId:this.props.match.params.id,
-        give: {}
+        give: {},
+        editToggle: false
     }
     componentDidMount(){
         this.fetchData()
@@ -16,21 +17,10 @@ class GiveShow extends Component {
               this.setState({give: data.give})
           })
       }
-
-      updateGive = give => {
-        const isUpdatedGive = g => {
-            return g._id === give._id;
-        };
-        GiveModel.update(give)
-            .then((res) => {
-              let gives = this.state.gives;
-              gives.find(isUpdatedGive).body = give.body;
-              this.setState({ gives: gives });
-            });
-      };
-
-
-  deletedGive = () => {
+    updateGive = give => {
+        this.setState({editToggle:!this.state.editToggle})
+    };
+    deletedGive = () => {
       console.log('deleted')
       GiveModel.destroy(this.state.giveId)
       .then(() => {
@@ -41,12 +31,11 @@ class GiveShow extends Component {
         return (
             <div>
                {this.state.give ? <GiveCard {...this.state.give} /> : "Loading..."}
+               {this.state.editToggle && <EditGive {...this.state.give} />}
                <button onClick={this.deletedGive}>Delete</button>
                <button onClick={this.updateGive}>Edit</button>
             </div>
         );
     }
 }
-
 export default GiveShow;
-

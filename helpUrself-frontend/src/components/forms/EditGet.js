@@ -12,21 +12,13 @@ class EditGet extends Component {
             category: props.category,
             needNow: true,
             needLater: false,
-            createdAt: null,
-        
+        }
     }
-    }
-
-
 
     handleSubmit = (e) => {
-        e.preventDefault()
-        console.log(this.state)
-        console.log(this.props)
         aGetModel.update(this.props._id, this.state)
             .then(data => {
                 console.log(data)
-                // this.props.history.push('/gets')
             })
     }
     handleChange = (e) => {
@@ -89,11 +81,3 @@ class EditGet extends Component {
 
 
 export default EditGet;
-// this.onChangeUserName = this.onChangeUserName.bind(this)
-// this.onChangeWhat = this.onChangeWhat.bind(this)
-// this.onChangeDescription = this.onChangeDescription.bind(this)
-// this.onChangeHowMany = this.onChangeHowMany.bind(this)
-// this.onChangeCategory = this.onChangeCategory.bind(this)
-// this.onChangeNeedNow = this.onChangeNeedNow.bind(this)
-// this.onChangeNeedLater = this.onChangeUserName.bind(this)
-// this.onChangeDate = this.onChangedate.bind(this)
