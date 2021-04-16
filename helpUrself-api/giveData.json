@@ -1,0 +1,24 @@
+{
+        "gives": [{
+                "username": "Robert",
+                "item": "Cans of tomato sauce",
+                "howMany": 3,
+                "description": " These cans are just sitting around",
+                "category": "Food",
+                "value": 6.00,
+                "availableNow": true,
+                "availableLater": false,
+                "created_date": null
+        },
+        {
+                "username": "William",
+                "item": "Cans of peas",
+                "howMany": 4,
+                "description": " These peas are still good!",
+                "category": "Food",
+                "value": 6.00,
+                "availableNow": true,
+                "availableLater": false,
+                "created_date": null
+        }]
+}

@@ -1,0 +1,58 @@
+{
+    "users": [
+        {
+            "username": "AlottaProgramming",
+            "email": "this@me.com",
+            "password": "tester",
+            "firstName": "Alotta",
+            "lastName": "Programming",
+            "streetNumber": 123,
+            "streetName": "Jones St.",
+            "unit": "ABC",
+            "city": "San Francisco",
+            "state": "CA",
+            "zipcode": 94102,
+            "phoneNumberHome": 5555555555,
+            "phoneNumberMobile": 4444444444,
+            "register_date": null,
+            "usersGives": [],
+            "usersGets": []
+        },
+        {
+            "username": "GivingGuru",
+            "email": "helper@me.com",
+            "password": "tester",
+            "firstName": "Givin",
+            "lastName": "Guru",
+            "streetNumber": 123,
+            "streetName": "Jones St.",
+            "unit": "ABC",
+            "city": "San Francisco",
+            "state": "CA",
+            "zipcode": 94102,
+            "phoneNumberHome": 6666666666,
+            "phoneNumberMobile": 8888888888,
+            "register_date": null,
+            "usersGives": [],
+            "usersGets": []
+        },
+        {
+            "username": "LovesHelp",
+            "email": "helping@me.com",
+            "password": "tester",
+            "firstName": "Loves",
+            "lastName": "Help",
+            "streetNumber": 123,
+            "streetName": "Jones St.",
+            "unit": "ABC",
+            "city": "San Francisco",
+            "state": "CA",
+            "zipcode": 94102,
+            "phoneNumberHome": 3333333333,
+            "phoneNumberMobile": 7777777777,
+            "register_date": null,
+            "usersGives": [],
+            "usersGets": []
+        }
+    ]
+}

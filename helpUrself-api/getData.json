@@ -1,0 +1,22 @@
+{
+    "gets": [{
+        "username": "tester@test.com",
+        "what": "tester@test.com",
+        "howMany": 5,
+        "description": "tester@test.com",
+        "category": "Gear",
+        "needNow": true,
+        "needLater": false,
+        "email": "tester@test.com"
+    },
+    {
+        "username": "tester2@test2.com",
+        "what": "tester2@test2.com",
+        "howMany": 3,
+        "description": "tester2@test2.com",
+        "category": "Gear",
+        "needNow": false,
+        "needLater": true,
+        "email": "tester2@test2.com"
+    }]
+}
