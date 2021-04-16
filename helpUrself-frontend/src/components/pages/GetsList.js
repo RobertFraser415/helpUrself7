@@ -13,20 +13,24 @@ class GetsList extends Component {
     fetchData = () => {
         aGetModel.all().then(data => {
             console.log(data)
-            this.setState({gets: data.gets})
+            this.setState({gets: data.data.gets})
         })
     }
     render() {
-        let getsList = this.state.gets.map((get, index) => {
-            return ( <Link to={`/gets/${get._id}`} key={index}>
-                    <GetCard {...get}/>
+        let getsList = []
+        if (this.state.gets) {
+            getsList = this.state.gets.map((get, index) => {
+                return (<Link to={`/gets/${get._id}`} key={index}>
+                    <GetCard {...get} />
                 </Link>
-            )
-        })
+                )
+            })
+        }
+     
         return (
             <div>
                 <h1>These R all the GETS </h1>
-                {this.state.gets ? getsList : 'Loading...'}
+                {this.state.gets ? getsList : 'No Gets...'}
             </div>
             );
 

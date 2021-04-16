@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import aGetModel from '../models/aGetModel'
 import GetCard from '../cards/GetCard'
+import EditGet from '../forms/EditGet'
 
 class GetShow extends Component {
     state = {
         getId: this.props.match.params.id,
-        get: {}
+        get: {},
+        editToggle: false
     }
     componentDidMount() {
         this.fetchData()
@@ -21,17 +23,18 @@ class GetShow extends Component {
         const isUpdatedGet = g => {
             return g._id === get._id;
         };
-        aGetModel.update(get)
-            .then((res) => {
-              let gets = this.state.gets;
-              gets.find(isUpdatedGet).body = get.body;
-              this.setState({ gets: gets });
-            });
+        this.setState({editToggle:!this.state.editToggle})
+        // aGetModel.update(get)
+        //     .then((res) => {
+        //       let gets = this.state.gets;
+        //       gets.find(isUpdatedGet).body = get.body;
+        //       this.setState({ gets: gets });
+        //     });
       };
     
     deletedGet = () => {
         console.log('deleted')
-        aGetModel.destroy(this.state.getId)
+        aGetModel.delete(this.state.getId)
             .then(() => {
                 this.props.history.push('/gets')
             })
@@ -40,6 +43,7 @@ class GetShow extends Component {
         return (
             <div>
                 {this.state.get ? <GetCard {...this.state.get} /> : "Loading..."}
+                {this.state.editToggle && <EditGet {...this.state.get} />}
                 <button onClick={this.deletedGet}>Delete</button>
                 <button onClick={this.updateGet}>Edit</button>
 

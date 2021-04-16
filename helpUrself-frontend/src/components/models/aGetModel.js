@@ -15,13 +15,13 @@ class aGetModel {
   }
 
   static update = (getId, updatedObject) => {
-    let request = axios.put(`${url}/${getId}`, updatedObject)
+    let request = axios.put(`${url}/gets/${getId}`, updatedObject)
     return request
   }
 
-  static delete = (get) => {
-    console.log(`deleting ${get.body}`)
-    let request = axios.delete(`${url}/${get._id}`)
+  static delete = (getId) => {
+    console.log(`deleting ${getId}`)
+    let request = axios.delete(`${url}/gets/${getId}`)
     return request
   }
 }
